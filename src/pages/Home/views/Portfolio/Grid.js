@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { PROJECTS } from "../../../../constants";
-import ProjectCard from "./ProjectCard";
+import ProjectCardSimple from "./ProjectCardSimple";
 
 const StyledSection = styled.section(({ gridArea }) => ({
   display: "grid",
@@ -13,9 +13,9 @@ const StyledSection = styled.section(({ gridArea }) => ({
 
 const Grid = ({ gridArea }) => {
   return (
-    <StyledSection data-ahoy="matheys" gridArea={gridArea}>
+    <StyledSection gridArea={gridArea}>
       {PROJECTS.map((project) => (
-        <ProjectCard project={project} />
+        <ProjectCardSimple project={project} />
       ))}
     </StyledSection>
   );

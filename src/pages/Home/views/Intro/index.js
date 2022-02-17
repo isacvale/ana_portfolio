@@ -1,18 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import Section from "../shared/Section";
+import SizeContext from "../../../../utils/SizeContext";
 import { HEADER_HEIGHT } from "../../../../constants";
 import DisplaySizes from "../../../../utils/DisplaySizes";
 import SocialIcons from "../../../../core/SocialIcons";
 
-const StyledTitle = styled.h1({
+const StyledTitle = styled.h2(({ template }) => ({
+  display: "block",
   fontFamily: "Dexa Pro",
   fontWeight: 600,
   fontSize: 33,
   lineHeight: "140%",
-  margin: 0,
-  textAlign: "center",
-});
+  margin: { tablet: "0 auto 0 calc(50% - 48px)" }[template] || 0,
+  maxWidth: { tablet: 240 }[template] || undefined,
+  textAlign: { tablet: "left" }[template] || "center",
+}));
 
 const sectionStyle = {
   justifyContent: "center",
@@ -31,13 +34,19 @@ const socialIconsExtraStyle = {
   justifyContent: "center",
 };
 
-const Intro = () => (
-  <Section extraStyle={sectionStyle}>
-    <DisplaySizes />
-    <StyledTitle>Hello, my name is Ana.</StyledTitle>
-    <StyledTitle>I am a UX/UI designer in Vancouver.</StyledTitle>
-    <SocialIcons extraStyle={socialIconsExtraStyle} />
-  </Section>
-);
+const Intro = () => {
+  const { template } = React.useContext(SizeContext);
+
+  return (
+    <Section extraStyle={sectionStyle}>
+      <DisplaySizes />
+      <StyledTitle template={template}>Hello, my name is Ana.</StyledTitle>
+      <StyledTitle template={template}>
+        I am a UX/UI designer in Vancouver.
+      </StyledTitle>
+      <SocialIcons extraStyle={socialIconsExtraStyle} />
+    </Section>
+  );
+};
 
 export default Intro;

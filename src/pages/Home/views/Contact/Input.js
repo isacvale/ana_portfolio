@@ -6,7 +6,7 @@ import { theme } from "../../../../utils/theme";
 import shadows from "../../../../utils/shadows";
 
 const {
-  colors: { cream, gray },
+  colors: { cream, dark, gray },
 } = theme;
 
 const Wrapper = styled.div({
@@ -14,11 +14,11 @@ const Wrapper = styled.div({
 });
 
 const StyledLabel = styled.label(({ hasValue }) => ({
-  color: gray,
+  color: hasValue ? dark : gray,
   fontSize: hasValue ? 14 : 16,
   position: "absolute",
-  left: 14,
-  top: hasValue ? 0 : 32,
+  left: hasValue ? 0 : 14,
+  top: hasValue ? 6 : 42,
 }));
 
 const commonInputStyle = {
@@ -28,7 +28,7 @@ const commonInputStyle = {
   boxSizing: "border-box",
   fontSize: 16,
   lineHeight: "140%",
-  marginTop: 18,
+  marginTop: 25,
   padding: "13px 14px",
   width: "100%",
 };

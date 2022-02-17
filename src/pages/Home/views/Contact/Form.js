@@ -5,6 +5,9 @@ import Button from "../../../../core/Button";
 
 const StyledForm = styled.form(({ gridArea }) => ({
   gridArea,
+  margin: "0 auto",
+  maxWidth: 680,
+  width: "100%",
 }));
 
 const Form = ({ gridArea }) => (
