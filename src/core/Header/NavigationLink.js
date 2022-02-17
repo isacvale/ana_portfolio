@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 const variantStyle = {
   default: {},
   panel: {
+    fontFamily: "Dexa Pro",
     fontSize: 30,
+    fontWeight: 600,
     height: 45,
     paddingTop: 0,
     marginTop: 15,

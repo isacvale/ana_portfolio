@@ -1,4 +1,4 @@
-const throtle = (func, delay = 100) => {
+const throtle = (func, delay = 20) => {
   let block = false;
 
   return (...args) => {

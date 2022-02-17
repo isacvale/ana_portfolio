@@ -15,8 +15,9 @@ const StyledHeader = styled.header({
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const sizes = useContext(SizeContext);
-  const showFullNavigation = ["laptop", "desktop"].includes(sizes.template);
+  const { template } = useContext(SizeContext);
+  const showFullNavigation = ["laptop", "desktop"].includes(template);
+  const showSmallLogo = ["mobile, tablet"].includes(template);
 
   const handleHamburgerClick = () => {
     setIsOpen(!isOpen);
@@ -25,7 +26,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <Columns>
-        <Logo logo={LOGO_SM} />
+        {showSmallLogo && <Logo logo={LOGO_SM} />}
         {showFullNavigation && <NavigationFull />}
         {!showFullNavigation && (
           <NavigationHamburger open={isOpen} onClick={handleHamburgerClick} />

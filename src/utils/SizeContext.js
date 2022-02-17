@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 const SizeContext = createContext({
-  width: 500,
+  width: 520,
   height: 800,
   template: "mobile",
 });

@@ -5,6 +5,7 @@ import SizeContext from "./SizeContext";
 const StyledAside = styled.aside({
   position: "fixed",
   bottom: 0,
+  zIndex: 1000,
 });
 
 const DisplaySizes = () => {

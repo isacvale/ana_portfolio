@@ -41,20 +41,28 @@ export const SOCIAL_LINKS = [
 
 export const PROJECTS = [
   {
-    type: "Swap Project",
-    name: "The Voice Langara",
-    focus: ["accessibility", "UI", "UX"],
-    system: ["multiplatform"],
-    ref: "the_voice",
-    img: "/proj2_voice.png",
-  },
-  {
     type: "Team Project",
     name: "Vita",
     focus: ["UI", "UX"],
     system: ["iOS", "Android"],
     ref: "vita",
     img: "/proj2_vita.png",
+  },
+  {
+    type: "Team Project",
+    name: "Sift",
+    focus: ["UX", "UI"],
+    system: ["iOS", "Android"],
+    ref: "sift",
+    img: "/proj2_sift.png",
+  },
+  {
+    type: "Swap Project",
+    name: "The Voice Langara",
+    focus: ["accessibility", "UI", "UX"],
+    system: ["multiplatform"],
+    ref: "the_voice",
+    img: "/proj2_voice.png",
   },
   {
     type: "Redesign",
@@ -66,14 +74,6 @@ export const PROJECTS = [
   },
   {
     type: "Redesign",
-    name: "Weather Station Application",
-    focus: ["UX"],
-    system: ["iOS"],
-    ref: "weather_station",
-    img: "/proj2_weatherapp.png",
-  },
-  {
-    type: "Redesign",
     name: "Aizenkai",
     focus: ["UI"],
     system: ["Web", "Larger Screens"],
@@ -81,11 +81,11 @@ export const PROJECTS = [
     img: "/proj2_aizenkai.png",
   },
   {
-    type: "Team Project",
-    name: "Sift",
-    focus: ["UX", "UI"],
-    system: ["iOS", "Android"],
-    ref: "sift",
-    img: "/proj2_sift.png",
+    type: "Redesign",
+    name: "Weather Station Application",
+    focus: ["UX"],
+    system: ["iOS"],
+    ref: "weather_station",
+    img: "/proj2_weatherapp.png",
   },
 ];
