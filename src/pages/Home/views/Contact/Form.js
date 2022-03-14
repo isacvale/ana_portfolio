@@ -5,7 +5,7 @@ import Button from "../../../../core/Button";
 
 const StyledForm = styled.form(({ gridArea }) => ({
   gridArea,
-  margin: "0 auto",
+  margin: "-20px auto 0",
   maxWidth: 680,
   width: "100%",
 }));
@@ -17,18 +17,22 @@ const Form = ({ gridArea }) => (
     data-netlify="true"
     method="POST"
   >
+    <input type="hidden" name="form-name" value="portfolio-contact" />
     <Input
       id="e-mail"
+      name="email"
       label="Please enter your email address"
       labelWithValue="Email"
     />
     <Input
       id="subject"
+      name="subject"
       label="Please enter the subject"
       labelWithValue="Subject"
     />
     <Input
       id="message"
+      name="message"
       label="Please write the message"
       labelWithValue="Message"
       textArea

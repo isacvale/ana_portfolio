@@ -6,13 +6,18 @@ import { MAX_CONTENT_WIDTH, MIN_PADDING } from "../../constants";
 
 const StyledFooter = styled.footer({
   alignItems: "center",
+  bottom: 0,
   boxSizing: "border-box",
   display: "flex",
   height: 40,
-  padding: `0 ${MIN_PADDING}px`,
+  left: 0,
   margin: "0 auto",
   maxWidth: MAX_CONTENT_WIDTH,
+  padding: `0 ${MIN_PADDING}px`,
+  position: "absolute",
   justifyContent: "space-between",
+  right: 0,
+  width: "100%",
 });
 
 const Copyright = styled.span({

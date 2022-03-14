@@ -10,14 +10,17 @@ export const MENU_OPTIONS = [
   {
     name: "Portfolio",
     path: "/portfolio",
+    index: 1,
   },
   {
-    name: "Curriculum",
-    path: "/curriculum",
+    name: "Resumé",
+    path: "/resume",
+    index: 2,
   },
   {
     name: "Contact",
     path: "/contact",
+    index: 3,
   },
 ];
 

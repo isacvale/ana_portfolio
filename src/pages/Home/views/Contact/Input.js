@@ -45,7 +45,7 @@ const StyledTextArea = styled.textarea(({ highlighted }) => ({
   resize: "vertical",
 }));
 
-const Input = ({ id, label: labelText, textArea, labelWithValue }) => {
+const Input = ({ id, name, label: labelText, textArea, labelWithValue }) => {
   const [value, setValue] = React.useState();
   const { highlighted, props } = useHighlight();
 
@@ -59,14 +59,14 @@ const Input = ({ id, label: labelText, textArea, labelWithValue }) => {
 
   return (
     <Wrapper>
-      <StyledLabel for={inputId} hasValue={hasValue}>
+      <StyledLabel htmlFor={inputId} hasValue={hasValue}>
         {hasValue ? labelWithValue : labelText || labelText}
       </StyledLabel>
       {isLine && (
         <StyledInput
           highlighted={highlighted}
           id={inputId}
-          name="email"
+          name={name}
           type="text"
           value={value}
           onChange={handleChange}
@@ -77,7 +77,7 @@ const Input = ({ id, label: labelText, textArea, labelWithValue }) => {
         <StyledTextArea
           highlighted={highlighted}
           id={inputId}
-          name="email"
+          name={name}
           rows="4"
           value={value}
           onChange={handleChange}

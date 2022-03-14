@@ -1,6 +1,14 @@
 @font-face {
   font-family: "Dexa Pro";
   font-style: "normal";
+  font-weight: 200;
+  font-display: swap;
+  src: local("Dexa Pro"),
+    url("./assets/fonts/DexaPro-200-ExtraLight.otf") format("opentype");
+}
+@font-face {
+  font-family: "Dexa Pro";
+  font-style: "normal";
   font-weight: 400;
   font-display: swap;
   src: local("Dexa Pro"),
@@ -16,11 +24,35 @@
 }
 @font-face {
   font-family: "Dexa Pro";
+  font-style: "italic";
+  font-weight: 700;
+  font-display: swap;
+  src: local("Dexa Pro"),
+    url("./assets/fonts/DexaPro-700-Bold-Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Dexa Pro";
   font-style: "normal";
   font-weight: 700;
   font-display: swap;
   src: local("Dexa Pro"),
     url("./assets/fonts/DexaPro-700-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Dexa Pro";
+  font-style: "normal";
+  font-weight: 800;
+  font-display: swap;
+  src: local("Dexa Pro"),
+    url("./assets/fonts/DexaPro-800-ExtraBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Dexa Pro";
+  font-style: "normal";
+  font-weight: 900;
+  font-display: swap;
+  src: local("Dexa Pro"),
+    url("./assets/fonts/DexaPro-900-Black.otf") format("opentype");
 }
 @font-face {
   font-family: "Dexa Pro Narrow";
@@ -48,4 +80,18 @@ code {
 
 .blockScroll {
   overflow: hidden !important;
+}
+
+/* hide scrollbar but allow scrolling */
+body.no-scrolling {
+  /* for Internet Explorer, Edge */
+  -ms-overflow-style: none;
+  /* for Firefox */
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+
+body.no-scrolling::-webkit-scrollbar {
+  /* for Chrome, Safari, and Opera */
+  display: none;
 }

@@ -2,34 +2,47 @@ import React, { StrictMode, useEffect, useState } from "react";
 import "./index.css";
 import Routes from "./Routes";
 import { SizeProvider } from "./utils/SizeContext";
-import throtle from "./utils/throtle";
+import throttle from "./utils/throttle";
+
+// const breakpoints = [500, 800, 1100]
+const breakpoints = [580, 800, 1100];
 
 function App() {
   const [sizes, setSizes] = useState({
-    width: 500,
-    height: 800,
+    width: breakpoints[0],
+    height: breakpoints[1],
     template: "mobile",
+    scrollTop: true,
   });
 
-  const getSizes = throtle(() => {
+  const getSizes = throttle(() => {
     const width = window.innerWidth;
     const height = window.innerHeight;
     const template =
-      width > 1100
+      width > breakpoints[2]
         ? "desktop"
-        : width > 800
+        : width > breakpoints[1]
         ? "laptop"
-        : width > 500
+        : width > breakpoints[0]
         ? "tablet"
         : "mobile";
     const orientation = height > width ? "portrait" : "landscape";
-    setSizes({ height, orientation, template, width });
+    const scrollTop = window.scrollY < 140;
+    setSizes({ height, orientation, template, width, scrollTop });
   });
 
   useEffect(() => {
     getSizes();
     window.addEventListener("resize", getSizes);
-    return () => window.removeEventListener("resize", getSizes);
+    window.addEventListener("scroll", getSizes);
+    document.addEventListener("flipup", getSizes);
+    document.addEventListener("flipdown", getSizes);
+    return () => {
+      window.removeEventListener("resize", getSizes);
+      window.removeEventListener("scroll", getSizes);
+      document.removeEventListener("flipup", getSizes);
+      document.removeEventListener("flipdown", getSizes);
+    };
   }, []);
 
   return (

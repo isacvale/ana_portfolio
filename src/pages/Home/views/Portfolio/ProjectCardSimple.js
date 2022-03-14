@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import SizeContext from "../../../../utils/SizeContext";
 import highlight from "../../../../utils/highlight";
 import { theme } from "../../../../utils/theme";
@@ -13,7 +15,8 @@ const StyledSection = styled.section(({ highlighted }) => {
     display: "flex",
     flexDirection: "column",
     padding: 0,
-    minWidth: 240,
+    // minWidth: 240,
+    minWidth: 190,
     width: "100%",
     maxWidth: 360,
     height: "fit-content",
@@ -26,7 +29,12 @@ const StyledSection = styled.section(({ highlighted }) => {
   };
 });
 
+const StyledLink = styled(Link)({
+  position: "relative",
+});
+
 const StyledImgMini = styled.img({
+  display: "block",
   width: "100%",
 });
 
@@ -83,7 +91,9 @@ const ProjectCardSimple = ({
       onFocus={addHighlight}
       onBlur={removeHighlight}
     >
-      <StyledImg src={img} alt={name} />
+      <StyledLink to={`/${ref}`}>
+        <StyledImg src={img} alt={name} />
+      </StyledLink>
     </StyledSection>
   );
 };

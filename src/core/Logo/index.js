@@ -7,14 +7,42 @@ const StyledImg = styled.img(({ extraStyle, logo }) => ({
   ...extraStyle,
 }));
 
-const Logo = ({ extraStyle, logo = LOGO_FULL_SM }) => {
+const StyledButton = styled.button({
+  border: "none",
+  background: "transparent",
+  cursor: "pointer",
+});
+
+const Logo = ({
+  extraStyle,
+  logo = LOGO_FULL_SM,
+  homePage,
+  isSmallScreen,
+  moveToIdx,
+  setIsOpen,
+  isOpen,
+}) => {
+  console.log({ isOpen });
+  const handleClick = () => {
+    if (isOpen) setIsOpen(false);
+    if (homePage) moveToIdx.current(0);
+    if (isSmallScreen) {
+      const el = document.querySelector("#view_intro");
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   return (
-    <StyledImg
-      alt="Ana Arado logo"
-      src={logo}
-      logo={logo}
-      extraStyle={extraStyle}
-    />
+    <StyledButton onClick={handleClick}>
+      <StyledImg
+        alt="Ana Arado logo"
+        src={logo}
+        logo={logo}
+        extraStyle={extraStyle}
+      />
+    </StyledButton>
   );
 };
 

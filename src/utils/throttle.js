@@ -1,4 +1,4 @@
-const throtle = (func, delay = 20) => {
+const throttle = (func, delay = 20) => {
   let block = false;
 
   return (...args) => {
@@ -14,4 +14,4 @@ const throtle = (func, delay = 20) => {
   };
 };
 
-export default throtle;
+export default throttle;

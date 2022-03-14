@@ -27,7 +27,7 @@ const logoExtraStyle = {
 };
 
 const socialIconsExtraStyle = {
-  position: "fixed",
+  position: "absolute",
   bottom: 30,
   left: 0,
   right: 0,
@@ -35,25 +35,70 @@ const socialIconsExtraStyle = {
   width: "fit-content",
 };
 
-const NavigationPanel = ({ author, xxx: onClosePanel }) => {
+const compareStrings = (a, b) => {
+  const la = a.toLowerCase();
+  const lb = b.toLowerCase();
+  return la.localeCompare(lb, "en", { sensitivity: "base" }) === 0;
+};
+
+const NavigationPanel = ({
+  currentPage,
+  author,
+  onClosePanel,
+  homePage,
+  moveToIdx,
+  isSmallScreen,
+  setIsOpen,
+  isOpen,
+}) => {
   useEffect(() => {
     const body = document.querySelector("body");
     body.classList.add("blockScroll");
     return () => body.classList.remove("blockScroll");
   }, []);
 
+  const handleClick = (idx) => () => {
+    onClosePanel();
+    const elId = [
+      "view_intro",
+      "view_portfolio",
+      "view_resume",
+      "view_contact",
+    ][idx];
+    const el = document.querySelector(`#${elId}`);
+    el.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    moveToIdx.current(idx);
+  };
+
+  const isActive = (name) => {
+    return compareStrings(name, currentPage);
+  };
+
   return (
     <StyledAside className="NavigationPanel">
-      <Logo logo={LOGO_FULL_SM} extraStyle={logoExtraStyle} />
+      <Logo
+        logo={LOGO_FULL_SM}
+        extraStyle={logoExtraStyle}
+        moveToIdx={moveToIdx}
+        isSmallScreen={isSmallScreen}
+        setIsOpen={setIsOpen}
+        isOpen={isOpen}
+      />
       <NavigationHamburger open onClick={onClosePanel} variant="panel" />
+
       <Menu>
-        {MENU_OPTIONS.map(({ name, path }) => (
+        {MENU_OPTIONS.map(({ name, path }, idx) => (
           <NavigationLink
             key={name}
             label={name}
-            isActive={name === "Portfolio"}
+            isActive={isActive(name)}
             variant="panel"
             path={path}
+            homePage={homePage}
+            clickCallback={handleClick(idx + 1)}
           />
         ))}
       </Menu>
