@@ -74,33 +74,8 @@ const Vita = () => {
 
   return (
     <div>
-      <Header keepSmallLogo />
+      <Header keepSmallLogo logoLinksHome />
       <ProjectHeroView data={dataComponent(template)} image={ImageComponent} />
-      {/* <ProjectHero>
-        <ProjectImage
-          projectData={projectData}
-          alt="Laptop and mobile displaying Vita's welcome page."
-        />
-        <ProjectTitle>Vita</ProjectTitle>
-        <ProjectDescription variant="main">
-          A data-drive responsive web platform to provide information about
-          vitamins and minerals in fruits and vegetables.
-        </ProjectDescription>
-        <ProjectDescription variant="focus">
-          Focus: Responsiveness, UI, UX | System: Multiplatform
-        </ProjectDescription>
-        <ProjectDescription variant="minor">
-          Project done by a team of three developers and four designers (my
-          role).
-        </ProjectDescription>
-        <ProjectDescription
-          variant="minor"
-          extraStyle={{ gridRow: "9 / span 1" }}
-        >
-          Main tools: Figma, Illustrator, and Photoshop.
-        </ProjectDescription>
-      </ProjectHero> */}
-
       <TheProblem />
       <TheSolution />
       <MyRole />

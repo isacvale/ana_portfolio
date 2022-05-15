@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import SectionGrid from "../../../core/Project/SectionGrid";
 import SectionTitle from "../../../core/Project/SectionTitle";
 import SectionText from "../../../core/Project/SectionText";
