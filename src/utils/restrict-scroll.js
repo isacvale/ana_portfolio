@@ -255,7 +255,7 @@ const restrictScroll = {
 
   // Restrict scrolling to only the `activeElement` element.
   run: function () {
-    this.events.map((event) => {
+    this.events.forEach((event) => {
       window.addEventListener(event, handler, eventOptions);
     });
   },

@@ -28,7 +28,13 @@ const StyledHeader = styled.header(({ isOpaque }) => ({
   transition: "background 0.4s, box-shadow 0.4s, blur 0.4s",
 }));
 
-const Header = ({ currentPage, homePage, keepSmallLogo, moveToIdx }) => {
+const Header = ({
+  currentPage,
+  homePage,
+  keepSmallLogo,
+  moveToIdx,
+  logoLinksHome,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const { scrollTop, template } = useContext(SizeContext);
   const showFullNavigation = ["laptop", "desktop"].includes(template);
@@ -55,6 +61,7 @@ const Header = ({ currentPage, homePage, keepSmallLogo, moveToIdx }) => {
             isSmallScreen={isSmallScreen}
             setIsOpen={setIsOpen}
             isOpen={isOpen}
+            logoLinksHome={logoLinksHome}
           />
         )}
         {showFullNavigation && (

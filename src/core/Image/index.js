@@ -11,13 +11,25 @@ const StyledButton = styled.button({
   cursor: "pointer",
   display: "flex",
   padding: 0,
+  position: "relative",
   width: "100%",
+  figure: {
+    padding: 0,
+    margin: 0,
+  },
   img: {
+    display: "block",
+    width: "100%",
+  },
+  capfigure: {
+    left: 0,
+    top: "calc(100% + 12px)",
+    position: "absolute",
     width: "100%",
   },
 });
 
-const Image = ({ currentImage, imageList }) => {
+const Image = ({ caption, currentImage, imageList }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [current, setCurrent] = useState(currentImage);
 
@@ -37,7 +49,10 @@ const Image = ({ currentImage, imageList }) => {
   return (
     <>
       <StyledButton type="button" onClick={toggleOpen}>
-        <img src={mainSrc} alt={mainAlt} />
+        <figure>
+          <img src={mainSrc} alt={mainAlt} />
+          {caption && <capfigure>{caption}</capfigure>}
+        </figure>
       </StyledButton>
       {isOpen && (
         <Lightbox

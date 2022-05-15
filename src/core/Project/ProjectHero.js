@@ -38,7 +38,7 @@ const Wrapper = styled.div({
   maxHeight: 1000,
 });
 
-const DataSlot = styled.div(({ isSmallScreen, template }) => ({
+const DataSlot = styled.div(({ isSmallScreen, template, vCenter }) => ({
   gridColumn: {
     mobile: "1 / -1",
     tablet: "1 / -1",
@@ -46,6 +46,8 @@ const DataSlot = styled.div(({ isSmallScreen, template }) => ({
     desktop: "1 / 5",
   }[template],
   gridRow: isSmallScreen ? "4 / 5" : "2 / 3",
+  height: vCenter ? "fit-content" : undefined,
+  alignSelf: vCenter ? "center" : undefined,
 }));
 
 const ImageSlot = styled.div(({ isSmallScreen, template }) => ({
@@ -58,7 +60,11 @@ const ImageSlot = styled.div(({ isSmallScreen, template }) => ({
   gridRow: "2 / 3",
 }));
 
-export const ProjectHeroView = ({ data: ProjData, image: ProjImage }) => {
+export const ProjectHeroView = ({
+  data: ProjData,
+  image: ProjImage,
+  vCenter,
+}) => {
   const { template } = useContext(SizeContext);
   const isSmallScreen = ["mobile", "tablet"].includes(template);
 
@@ -87,7 +93,11 @@ export const ProjectHeroView = ({ data: ProjData, image: ProjImage }) => {
         <ImageSlot template={template} isSmallScreen={isSmallScreen}>
           <ProjImage />
         </ImageSlot>
-        <DataSlot template={template} isSmallScreen={isSmallScreen}>
+        <DataSlot
+          template={template}
+          isSmallScreen={isSmallScreen}
+          vCenter={vCenter}
+        >
           <ProjData />
         </DataSlot>
       </Columns>

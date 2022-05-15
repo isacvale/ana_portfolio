@@ -21,8 +21,8 @@ const Logo = ({
   moveToIdx,
   setIsOpen,
   isOpen,
+  logoLinksHome,
 }) => {
-  console.log({ isOpen });
   const handleClick = () => {
     if (isOpen) setIsOpen(false);
     if (homePage) moveToIdx.current(0);
