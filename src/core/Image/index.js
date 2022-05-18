@@ -21,7 +21,7 @@ const StyledButton = styled.button({
     display: "block",
     width: "100%",
   },
-  capfigure: {
+  figcaption: {
     left: 0,
     top: "calc(100% + 12px)",
     position: "absolute",
