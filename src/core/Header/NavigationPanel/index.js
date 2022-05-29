@@ -86,9 +86,9 @@ const NavigationPanel = ({
         isSmallScreen={isSmallScreen}
         setIsOpen={setIsOpen}
         isOpen={isOpen}
+        homePage={homePage}
       />
       <NavigationHamburger open onClick={onClosePanel} variant="panel" />
-
       <Menu>
         {MENU_OPTIONS.map(({ name, path }, idx) => (
           <NavigationLink

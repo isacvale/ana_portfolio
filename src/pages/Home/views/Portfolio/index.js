@@ -39,7 +39,7 @@ const Portfolio = () => {
   return (
     <Section id="#portfolio">
       <Columns columns="1fr" extraStyle={columnsExtraStyle[template]} gap={0}>
-        <Title gridArea="title" id="view_contact">
+        <Title gridArea="title" id="view_portfolio">
           Portfolio
         </Title>
         <StyledText gridArea="text" template={template}>
