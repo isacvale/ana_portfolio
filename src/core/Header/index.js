@@ -50,7 +50,7 @@ const Header = ({
   const isSmallScreen = ["mobile", "tablet"].includes(template);
 
   return (
-    <StyledHeader isOpaque={isOpaque}>
+    <StyledHeader isOpaque={isOpaque} data-component="Header">
       <Columns>
         {showSmallLogo && (
           <Logo

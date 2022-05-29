@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { LOGO_FULL_LG, LOGO_FULL_SM, LOGO_SM } from "../../constants";
 
@@ -23,15 +24,24 @@ const Logo = ({
   isOpen,
   logoLinksHome,
 }) => {
+  const navigate = useNavigate()
+
   const handleClick = () => {
-    if (isOpen) setIsOpen(false);
-    if (homePage) moveToIdx.current(0);
-    if (isSmallScreen) {
-      const el = document.querySelector("#view_intro");
-      el.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    if (homePage) {
+      if (isSmallScreen) {
+        const el = document.querySelector("#view_intro");
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else {
+        moveToIdx.current(0);
+      }
+    } else {
+      navigate("/", { replace: true })
+    }
+    if (isOpen) {
+      setIsOpen(false);
     }
   };
   return (
