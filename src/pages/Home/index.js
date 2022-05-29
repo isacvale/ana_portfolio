@@ -33,7 +33,6 @@ const getBaseIdx = () => {
       "#resume": 2,
       "#contact": 3,
     }[hash] || 0;
-  console.log({ idxDict, hash });
   return idxDict;
 };
 

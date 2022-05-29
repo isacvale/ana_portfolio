@@ -74,7 +74,7 @@ const Vita = () => {
 
   return (
     <div>
-      <Header keepSmallLogo logoLinksHome />
+      <Header keepSmallLogo logoLinksHome currentPage="Vita"/>
       <ProjectHeroView data={dataComponent(template)} image={ImageComponent} />
       <TheProblem />
       <TheSolution />
