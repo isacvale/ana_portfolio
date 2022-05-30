@@ -42,22 +42,22 @@ const columnsExtraStyle = {
   },
 };
 
-const Contact = () => {
+const Contact = ({blockTab}) => {
   const { template } = React.useContext(SizeContext);
 
   return (
-    <Section>
+    <Section  blockTab={blockTab}>
       <Columns columns="1fr" extraStyle={columnsExtraStyle[template]} gap={0}>
         <Title gridArea="title" alignSelf="end" id="view_contact">
           Contact
         </Title>
         <StyledText gridArea="text" template={template}>
           You can reach me through social media, this contact form, or sending
-          an email to <Anchor href="">me@anaarado.com</Anchor>.
+          an email to <Anchor href="" tabIndex={blockTab ? -1 :0}>me@anaarado.com</Anchor>.
         </StyledText>
-        <Form gridArea="form" />
+        <Form gridArea="form" blockTab={blockTab}/>
       </Columns>
-      <Footer />
+      <Footer blockTab={blockTab} />
     </Section>
   );
 };

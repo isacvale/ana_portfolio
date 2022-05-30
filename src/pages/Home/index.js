@@ -62,10 +62,10 @@ const Home = () => {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       >
-        <Intro id="intro" />
-        <Portfolio id="portfolio" />
-        <Resume id="resume" />
-        <Contact id="contact" />
+        <Intro id="intro" blockTab={isFullPageApp && currentPage !== 'intro'}/>
+        <Portfolio id="portfolio"  blockTab={isFullPageApp && currentPage !== 'portfolio'}/>
+        <Resume id="resume"  blockTab={isFullPageApp && currentPage !== 'resume'}/>
+        <Contact id="contact"  blockTab={isFullPageApp && currentPage !== 'contact'}/>
       </PageScroller>
     </StyledPage>
   );

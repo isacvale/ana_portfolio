@@ -31,6 +31,9 @@ const StyledSection = styled.section(({ highlighted }) => {
 
 const StyledLink = styled(Link)({
   position: "relative",
+  '&:focus': {
+    outline: 'none',
+  }
 });
 
 const StyledImgMini = styled.img({
@@ -73,6 +76,7 @@ const CardBodyFull = styled.div(({ highlighted }) => ({
 }));
 
 const ProjectCardSimple = ({
+  blockTab,
   project: { type, name, focus, system, ref, img },
 }) => {
   const [highlighted, setHighlighted] = useState(false);
@@ -87,11 +91,10 @@ const ProjectCardSimple = ({
       highlighted={highlighted}
       onMouseEnter={addHighlight}
       onMouseLeave={removeHighlight}
-      tabIndex="0"
       onFocus={addHighlight}
       onBlur={removeHighlight}
     >
-      <StyledLink to={`/${ref}`}>
+      <StyledLink to={`/${ref}`} tabIndex={blockTab ? -1 : 0}>
         <StyledImg src={img} alt={name} />
       </StyledLink>
     </StyledSection>

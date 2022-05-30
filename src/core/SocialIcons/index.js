@@ -9,10 +9,10 @@ const StyledAside = styled.aside(({ extraStyle = {} }) => ({
   ...extraStyle,
 }));
 
-const SocialIcons = ({ extraStyle }) => (
+const SocialIcons = ({ blockTab, extraStyle }) => (
   <StyledAside extraStyle={extraStyle}>
     {SOCIAL_LINKS.map((link) => (
-      <Button key={link.name} link={link} />
+      <Button key={link.name} link={link} blockTab={blockTab} />
     ))}
   </StyledAside>
 );

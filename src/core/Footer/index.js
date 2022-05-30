@@ -26,11 +26,11 @@ const Copyright = styled.span({
   fontWeight: 500,
 });
 
-const Footer = () => {
+const Footer = ({blockTab}) => {
   return (
     <StyledFooter>
       <Copyright>© 2022 - Ana Arado</Copyright>
-      <SocialIcons />
+      <SocialIcons blockTab={blockTab}/>
     </StyledFooter>
   );
 };

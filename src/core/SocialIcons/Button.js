@@ -12,9 +12,9 @@ const StyledImg = styled.img({
   width: "100%",
 });
 
-const Button = ({ link: { name, icon, url } }) => {
+const Button = ({ blockTab, link: { name, icon, url } }) => {
   return (
-    <StyledAnchor href={url} target="_blank">
+    <StyledAnchor href={url} target="_blank" tabIndex={blockTab ? "-1" : "0"}>
       <StyledImg src={icon} alt={name} />
     </StyledAnchor>
   );

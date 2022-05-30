@@ -38,11 +38,11 @@ const columnsExtraStyle = {
   },
 };
 
-const Resume = () => {
+const Resume = ({blockTab}) => {
   const { template } = React.useContext(SizeContext);
 
   return (
-    <Section>
+    <Section  blockTab={blockTab}>
       <Columns columns="1fr" extraStyle={columnsExtraStyle[template]} gap={0}>
         <Title gridArea="title" alignSelf="end" id="view_resume">
           Resumé
@@ -50,7 +50,7 @@ const Resume = () => {
         <StyledText gridArea="text" template={template}>
           Please feel free to view and download a copy of my&nbsp;resumé.
         </StyledText>
-        <Button gridArea="button" pdf="pdf/resume.pdf" margin="0 auto">
+        <Button gridArea="button" pdf="pdf/resume.pdf" margin="0 auto" blockTab={blockTab}>
           Download Resumé
         </Button>
       </Columns>

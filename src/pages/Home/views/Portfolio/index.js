@@ -33,11 +33,11 @@ const StyledText = styled(Text)(({ template }) => ({
   // fontSize: { laptop: 22, desktop: 30 }[template] || undefined,
 }));
 
-const Portfolio = () => {
+const Portfolio = ({blockTab}) => {
   const { template } = React.useContext(SizeContext);
 
   return (
-    <Section id="#portfolio">
+    <Section id="#portfolio" blockTab={blockTab}>
       <Columns columns="1fr" extraStyle={columnsExtraStyle[template]} gap={0}>
         <Title gridArea="title" id="view_portfolio">
           Portfolio
@@ -46,7 +46,7 @@ const Portfolio = () => {
           Here you can find examples of redesign proposals for existing
           websites, solo projects as well of group projects.
         </StyledText>
-        <Grid gridArea="cards" />
+        <Grid gridArea="cards" blockTab={blockTab}/>
       </Columns>
     </Section>
   );

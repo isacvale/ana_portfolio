@@ -15,6 +15,7 @@ const StyledButton = styled.button({
 });
 
 const Logo = ({
+  blockTab,
   extraStyle,
   logo = LOGO_FULL_SM,
   homePage,
@@ -45,7 +46,7 @@ const Logo = ({
     }
   };
   return (
-    <StyledButton onClick={handleClick}>
+    <StyledButton onClick={handleClick} tabIndex={blockTab? "-1" : "0"}>
       <StyledImg
         alt="Ana Arado logo"
         src={logo}

@@ -63,22 +63,22 @@ const logoExtraStyle = {
   },
 };
 
-const Intro = () => {
+const Intro = ({ blockTab }) => {
   const { template } = React.useContext(SizeContext);
 
   const isLarge = ["laptop", "desktop"].includes(template);
 
   return (
-    <Section extraStyle={sectionStyle} Id="view_intro">
+    <Section extraStyle={sectionStyle} Id="view_intro" blockTab={blockTab}>
       <DisplaySizes />
       {isLarge && (
-        <Logo logo={LOGO_FULL_LG} extraStyle={logoExtraStyle[template]} />
+        <Logo logo={LOGO_FULL_LG} extraStyle={logoExtraStyle[template]} blockTab={blockTab || isLarge} />
       )}
       <StyledTitle template={template}>Hello, my name is&nbsp;Ana.</StyledTitle>
       <StyledTitle template={template}>
         I am a UX/UI designer in Vancouver.
       </StyledTitle>
-      <SocialIcons extraStyle={socialIconsExtraStyle} />
+      <SocialIcons extraStyle={socialIconsExtraStyle} blockTab={blockTab} />
     </Section>
   );
 };

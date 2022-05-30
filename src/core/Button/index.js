@@ -50,6 +50,7 @@ const SubmitButton = styled.input(
 );
 
 const Button = ({
+  blockTab,
   children,
   color = "blue",
   gridArea,
@@ -68,6 +69,7 @@ const Button = ({
         gridArea={gridArea}
         highlighted={highlighted}
         margin={margin}
+        tabIndex={blockTab ? -1 : 0}
         {...submit}
         {...props}
       />
@@ -82,6 +84,7 @@ const Button = ({
       href={pdf}
       margin={margin}
       target="_blank"
+      tabIndex={blockTab ? -1 : 0}
       {...props}
     >
       {children}

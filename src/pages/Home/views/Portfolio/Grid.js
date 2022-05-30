@@ -22,13 +22,13 @@ const StyledSection = styled.section(({ gridArea, template }) => ({
   aspectRatio: { laptop: "800 / 528" }[template] || undefined,
 }));
 
-const Grid = ({ gridArea }) => {
+const Grid = ({ blockTab, gridArea }) => {
   const { template } = React.useContext(SizeContext);
 
   return (
     <StyledSection gridArea={gridArea} template={template}>
       {PROJECTS.map((project) => {
-        return <ProjectCardSimple project={project} key={project.ref} />;
+        return <ProjectCardSimple project={project} key={project.ref} blockTab={blockTab} />;
       })}
     </StyledSection>
   );
