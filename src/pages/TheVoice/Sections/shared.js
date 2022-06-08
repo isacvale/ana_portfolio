@@ -7,10 +7,13 @@ import Paragraph from "../../../core/Paragraph";
 import the_voice_accessibility from "../../../assets/projectImg/the_voice/the_voice_accessibility.png";
 import the_voice_menu_old from "../../../assets/projectImg/the_voice/the_voice_menu_old.png";
 import the_voice_menu_new from "../../../assets/projectImg/the_voice/the_voice_menu_new.png";
+import the_voice_not_connected from "../../../assets/projectImg/the_voice/the_voice_not_connected.png";
+import the_voice_how_to_install from "../../../assets/projectImg/the_voice/the_voice_how_to_install.png";
 
 const labels = [
-  "Original Menu",
-  "Proposed Menu",
+  "The Voice home page",
+  "Original menu",
+  "Proposed menu",
   "Not connected screen",
   "How to install screen",
 ];
@@ -24,6 +27,8 @@ export const TheVoiceImages = ({ currentImage }) => {
     { src: the_voice_accessibility, alt: labels[0] },
     { src: the_voice_menu_old, alt: labels[1] },
     { src: the_voice_menu_new, alt: labels[2] },
+    { src: the_voice_not_connected, alt: labels[3] },
+    { src: the_voice_how_to_install, alt: labels[4] },
   ];
   return (
     <Image

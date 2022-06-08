@@ -3,6 +3,7 @@ import SectionGrid from "../../../core/Project/SectionGrid";
 import SectionTitle from "../../../core/Project/SectionTitle";
 import SectionText from "../../../core/Project/SectionText";
 import Paragraph from "../../../core/Paragraph";
+import { ImageWrapperFull, TheVoiceImages } from "./shared"
 
 const Accessibility = () => (
   <SectionGrid>
@@ -16,7 +17,10 @@ const Accessibility = () => (
         Accessibility Evaluation Tool was used as a reference but the updates
         went beyond its recommendations.
       </Paragraph>
-    </SectionText>
+    </SectionText>    
+    <ImageWrapperFull>
+      <TheVoiceImages currentImage={0} />
+    </ImageWrapperFull>
   </SectionGrid>
 );
 

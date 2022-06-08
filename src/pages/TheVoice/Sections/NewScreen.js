@@ -3,6 +3,7 @@ import SectionGrid from "../../../core/Project/SectionGrid";
 import SectionTitle from "../../../core/Project/SectionTitle";
 import SectionText from "../../../core/Project/SectionText";
 import Paragraph from "../../../core/Paragraph";
+import { ImageWrapperThin, TheVoiceImages } from "./shared"
 
 const NewScreens = () => (
   <SectionGrid>
@@ -15,6 +16,10 @@ const NewScreens = () => (
         that did not see or read the card on the home screen.
       </Paragraph>
     </SectionText>
+    <ImageWrapperThin>
+      <TheVoiceImages currentImage={3} label="3" />
+      <TheVoiceImages currentImage={4} label="4" />
+    </ImageWrapperThin>
   </SectionGrid>
 );
 
