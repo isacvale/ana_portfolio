@@ -2,10 +2,12 @@ import { BrowserRouter, Route, Routes as Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Vita from "./pages/Vita";
 import TheVoice from "./pages/TheVoice";
+import ScrollToTop from "./ScrollToTop";
 
 const Routes = ({ history }) => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Switch>
         <Route exact path="/" element={<Home />} />
         <Route exact path="vita" element={<Vita />} />

@@ -36,6 +36,7 @@ const socialIconsExtraStyle = {
 };
 
 const compareStrings = (a, b) => {
+  if (!b) return false;
   const la = a.toLowerCase();
   const lb = b.toLowerCase();
   return la.localeCompare(lb, "en", { sensitivity: "base" }) === 0;
@@ -77,6 +78,8 @@ const NavigationPanel = ({
     return compareStrings(name, currentPage);
   };
 
+  console.log({MENU_OPTIONS})
+
   return (
     <StyledAside className="NavigationPanel">
       <Logo
@@ -90,7 +93,9 @@ const NavigationPanel = ({
       />
       <NavigationHamburger open onClick={onClosePanel} variant="panel" />
       <Menu>
-        {MENU_OPTIONS.map(({ name, path }, idx) => (
+        {MENU_OPTIONS.map(({ name, path }, idx) => {
+          console.log({name, path, idx})
+          return (
           <NavigationLink
             key={name}
             label={name}
@@ -100,7 +105,7 @@ const NavigationPanel = ({
             homePage={homePage}
             clickCallback={handleClick(idx + 1)}
           />
-        ))}
+        )})}
       </Menu>
       <SocialIcons extraStyle={socialIconsExtraStyle} />
     </StyledAside>

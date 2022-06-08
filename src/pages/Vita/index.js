@@ -8,7 +8,8 @@ import ProjectImage, {
   StaticProjectImage,
 } from "../../core/Project/ProjectImage";
 import SizeContext from "../../utils/SizeContext";
-import { PROJECTS } from "../../constants";
+// import { PROJECTS } from "../../constants";
+
 import TheProblem from "./Sections/TheProblem";
 import TheSolution from "./Sections/TheSolution";
 import MyRole from "./Sections/MyRole";
@@ -69,7 +70,7 @@ const dataComponent = (template) => () =>
   );
 
 const Vita = () => {
-  const projectData = PROJECTS.find((x) => x.ref === "vita");
+  // const projectData = PROJECTS.find((x) => x.ref === "vita");
   const { template } = useContext(SizeContext);
 
   return (

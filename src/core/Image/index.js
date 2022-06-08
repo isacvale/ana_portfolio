@@ -51,7 +51,7 @@ const Image = ({ caption, currentImage, imageList }) => {
       <StyledButton type="button" onClick={toggleOpen}>
         <figure>
           <img src={mainSrc} alt={mainAlt} />
-          {caption && <capfigure>{caption}</capfigure>}
+          {caption && <figcaption>{caption}</figcaption>}
         </figure>
       </StyledButton>
       {isOpen && (

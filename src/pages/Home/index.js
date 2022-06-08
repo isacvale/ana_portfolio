@@ -49,7 +49,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    window.scroll({ top: 0, behavior: "auto" });
+    // window.scroll({ top: 0, behavior: "auto" });
     moveToIdx.current(getBaseIdx());
   }, [isFullPageApp]);
 
