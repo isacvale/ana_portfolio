@@ -4,9 +4,11 @@ import Input from "./Input";
 import Button from "../../../../core/Button";
 
 const StyledForm = styled.form(({ gridArea }) => ({
+  display: 'grid',
   gridArea,
   margin: "-20px auto 0",
   maxWidth: 680,
+  rowGap: 30,
   width: "100%",
 }));
 
